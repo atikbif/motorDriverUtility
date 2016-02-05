@@ -9,6 +9,7 @@ ScanManager::ScanManager(QObject *parent) : QObject(parent), portName("COM1")
     connect(scan, &Scanner::readFinished, this, &ScanManager::readFinished);
     connect(scan, &Scanner::writeFinished, this, &ScanManager::writeFinished);
     connect(scan, &Scanner::rpmUpdate, this, &ScanManager::rpmUpdate);
+    connect(scan, &Scanner::errorMessage, this, &ScanManager::errorMessage);
     scanThread.start();
     emit operate();
 }

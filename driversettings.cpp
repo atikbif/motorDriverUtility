@@ -19,6 +19,7 @@ int DriverSettings::getRpmGoal() const
 void DriverSettings::setRpmGoal(int value)
 {
     if((value>=rpmGoalMin)&&(value<=rpmGoalMax)) rpmGoal = value;
+    if(value && value<300) rpmGoal = 300;
 }
 
 int DriverSettings::getStartPwm() const
@@ -49,6 +50,56 @@ int DriverSettings::getRpmUpSpeed() const
 void DriverSettings::setRpmUpSpeed(int value)
 {
     if((value>=rpmUpSpeedMin)&&(value<=rpmUpSpeedMax)) rpmUpSpeed = value;
+}
+
+int DriverSettings::getPolarPairsMin()
+{
+    return polarPairsMin;
+}
+
+int DriverSettings::getPolarPairsMax()
+{
+    return polarPairsMax;
+}
+
+int DriverSettings::getRpmGoalMin()
+{
+    return rpmGoalMin;
+}
+
+int DriverSettings::getRpmGoalMax()
+{
+    return rpmGoalMax;
+}
+
+int DriverSettings::getStartPwmMin()
+{
+    return startPwmMin;
+}
+
+int DriverSettings::getStartPwmMax()
+{
+    return startPwmMax;
+}
+
+int DriverSettings::getStartRpmMin()
+{
+    return startRpmMin;
+}
+
+int DriverSettings::getStartRpmMax()
+{
+    return startRpmMax;
+}
+
+int DriverSettings::getRpmUpSpeedMin()
+{
+    return rpmUpSpeedMin;
+}
+
+int DriverSettings::getRpmUpSpeedMax()
+{
+    return rpmUpSpeedMax;
 }
 
 DriverSettings::DriverSettings(): polarPairs(7), rpmGoal(0), startPwm(200),

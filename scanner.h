@@ -30,6 +30,7 @@ signals:
     void rpmUpdate(int rpmValue);
     void writeFinished(const QString &message);
     void readFinished(const DriverSettings &conf, const QString &message);
+    void errorMessage(const QString &message);
 
 public slots:
     void startScan(void);
