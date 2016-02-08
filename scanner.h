@@ -5,6 +5,8 @@
 #include "driversettings.h"
 #include <QString>
 #include <QMutex>
+#include <QSerialPort>
+#include <QByteArray>
 
 class Scanner : public QObject
 {
@@ -17,6 +19,8 @@ class Scanner : public QObject
     bool wrFlag;
     QMutex mutex;
 
+    bool openPort(const QString &pName, QSerialPort &port);
+    void writeAndRead(QByteArray &data, QSerialPort &port);
 public:
     explicit Scanner(const QString &pName, QObject *parent = 0);
     void readSettings(void);
